@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src="./phuong.js"></script>
+    <script src="../phuong.js"></script>
 </head>
 
 <body>
@@ -70,22 +71,57 @@
                 </div>
 
                 <div style="flex: 1; background-color: #fff; display: flex; justify-content: space-around; align-items: center; padding: 0px;">
-                    <a href="../trangdangnhap.php" style="text-decoration: none; color: #333; display: flex; flex-direction: column; align-items: center;">
-                        <i class="fa fa-sign-in" style="font-size: 20px;"></i>
-                        <span>Đăng nhập</span>
-                    </a>
+                    <?php session_start(); ?>
+          <div style="display: flex; gap: 20px; align-items: center;">
+            <?php if (isset($_SESSION['username'])): ?>
+              <!-- Hiển thị tên người dùng -->
+              <a href="#" style="text-decoration: none; color: #0d6efd; display: flex; flex-direction: column; align-items: center;">
+                <i class="fa fa-user" style="font-size: 20px;"></i>
+                <span><?php echo htmlspecialchars($_SESSION['username']); ?></span>
+              </a>
 
-                    <a href="../trangdangky.php" style="text-decoration: none; color: #333; display: flex; flex-direction: column; align-items: center;">
-                        <i class="fa fa-user-plus" style="font-size: 20px;"></i>
-                        <span>Đăng ký</span>
-                    </a>
+              <!-- Nút đăng xuất -->
+              <a href="../Database/dangxuat.php" style="text-decoration: none; color: #c00; display: flex; flex-direction: column; align-items: center;margin: 0 3px;">
+                <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+                <span>Đăng xuất</span>
+              </a>
+            <?php else: ?>
+              <!-- Nút đăng nhập mặc định -->
+              <a href="../trangdangnhap.php" style="text-decoration: none; color: #333; display: flex; flex-direction: column; align-items: center;margin: 0px -15px">
+                <i class="fa fa-sign-in" style="font-size: 20px;"></i>
+                <span>Đăng nhập</span>
+              </a>
+            <?php endif; ?>
+          </div>
+
+          <a href="../trangdangky.php" style="text-decoration: none; color: #333; display: flex; flex-direction: row; align-items: center; gap: 8px; padding: 0 24px;">
+            <i class="fa fa-user-plus" style="font-size: 20px;"></i>
+            <span>Đăng ký</span>
+          </a>
+
 
                     <!-- Liên kết giỏ hàng -->
-                    <div class="cart-wrapper">
-                        <a href="#" style="text-decoration: none; color: #333;">
-                            <i class="fa fa-shopping-cart" style="font-size: 20px;"></i>
-                            <span style="text-decoration: none;">Giỏ hàng</span>
-                        </a>
+          <div class="cart-wrapper">
+            <a href="./giohanglon/giohang.php" style="text-decoration: none; color: #333; position: relative;">
+              <i class="fa fa-shopping-cart" style="font-size: 20px;"></i>
+              <span style="text-decoration: none;">Giỏ hàng</span>
+
+              <?php
+              // Đếm số sản phẩm trong giỏ
+              $totalItems = 0;
+              if (isset($_SESSION['cart'])) {
+                foreach ($_SESSION['cart'] as $item) {
+                  $totalItems += $item['quantity'];
+                }
+              }
+              ?>
+
+              <!-- Hiển thị số lượng sản phẩm -->
+              <?php if ($totalItems > 0): ?>
+                <span class="cart-count"><?php echo $totalItems; ?></span>
+              <?php endif; ?>
+            </a>
+          </div>
 
 
                         <!-- Popup giỏ hàng -->
@@ -119,24 +155,24 @@
                     <div class="item">
                         MUA ĐỒ CHO MÈO
                         <div class="sub-list">
-                            <a href="" class="sub-item" style="text-decoration: none;">Thức ăn & dinh dưỡng cho Mèo</a>
-                            <a href="" class="sub-item" style="text-decoration: none;">Phụ kiện & đồ chơi cho Mèo</a>
+                            <a href="./thucanchomeo.php" class="sub-item" style="text-decoration: none;">Thức ăn & dinh dưỡng cho Mèo</a>
+                            <a href="./phukienmeo.php" class="sub-item" style="text-decoration: none;">Phụ kiện & đồ chơi cho Mèo</a>
                         </div>
                     </div>
                     <div class="item">
                         MUA ĐÒ CHO CHÓ
                         <div class="sub-list">
-                            <a href="" class="sub-item" style="text-decoration: none;">Thức ăn & dinh dưỡng cho Chó</a>
-                            <a href="" class="sub-item" style="text-decoration: none;">Phụ kiện & đồ chơi cho Chó</a>
+                            <a href="../Dochocho/thucanchodog.php" class="sub-item" style="text-decoration: none;">Thức ăn & dinh dưỡng cho Chó</a>
+                            <a href="../Dochocho/phukien.php" class="sub-item" style="text-decoration: none;">Phụ kiện & đồ chơi cho Chó</a>
                         </div>
                     </div>
 
                     <div class="item">
-                        <a href="" style="text-decoration: none;color:#000">GIỚI THIỆU</a>
+                        <a href="../gioithieu.php" style="text-decoration: none;color:#000">GIỚI THIỆU</a>
 
                     </div>
                     <div class="item">
-                        <a href="" style="text-decoration: none; color:#000">LIÊN HỆ</a>
+                        <a href="../lienhe.php" style="text-decoration: none; color:#000">LIÊN HỆ</a>
 
                     </div>
                 </div>
@@ -148,7 +184,7 @@
                     <a href="../Dochocho/thucanchodog.php" class="custom-button">MUA ĐỒ CHO CHÓ</a>
                     <a href="./thucanchomeo.php" class="custom-button" style="color: aliceblue;
                     background: blue;">MUA ĐỒ CHO MÈO</a>
-                    <a href="#" class="custom-button">GIỚI THIỆU</a>
+                    <a href="../gioithieu.php" class="custom-button">GIỚI THIỆU</a>
                     <a href="#" class="custom-button">LIÊN HỆ</a>
                 </div> 
             </div>
@@ -211,7 +247,7 @@
     <div class="filter-bar">
       <div class="left-side">
         <p>Sản phẩm cho Mèo</p>
-         <a href="./phukien.php" style="color: red;
+         <a href="./phukienmeo.php" style="color: red;
         text-decoration: none; font-size: 20px;" >Phụ kiện & đồ chơi cho Mèo</a>
       </div>
 
@@ -252,7 +288,7 @@
         $orderBy = 'ORDER BY id DESC'; // mặc định: mới nhất
     }
 
-    $sql = "SELECT * FROM pet_food_products WHERE id >= 17 LIMIT 8";
+    $sql = "SELECT * FROM pet_food_products WHERE id >= 33 LIMIT 8";
     $result = $conn->query($sql);
     ?>
     <div class="product-list">

@@ -145,10 +145,10 @@
             <div class="box box2">
                 <div class="custom-button-group">
                     <a href="./trangchu.php" class="custom-button">TRANG CHỦ</a>
-                    <a href="#" class="custom-button">MUA ĐỒ CHO CHÓ</a>
-                    <a href="#" class="custom-button">MUA ĐỒ CHO MÈO</a>
-                    <a href="#" class="custom-button">GIỚI THIỆU</a>
-                    <a href="#" class="custom-button">LIÊN HỆ</a>
+                    <a href="./Dochocho/thucanchodog.php" class="custom-button">MUA ĐỒ CHO CHÓ</a>
+                    <a href="./Dochomeo/thucanchomeo.php" class="custom-button">MUA ĐỒ CHO MÈO</a>
+                    <a href="./gioithieu.php" class="custom-button">GIỚI THIỆU</a>
+                    <a href="./lienhe.php" class="custom-button">LIÊN HỆ</a>
                 </div>
             </div>
             <div class="box box3">
