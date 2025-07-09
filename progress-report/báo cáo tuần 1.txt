@@ -1,0 +1,6 @@
+Báo cáo tiến độ tuần 1 (08/06–14/06)
+Nội dung thực hiện: Tìm hiểu tổng quan đề tài và tài liệu liên quan
+•	Khởi động ý tưởng dự án PetYumy – website bán đồ cho thú cưng
+•	Tìm hiểu các đề tài liên quan: quản lý sản phẩm, người dùng, đơn hàng
+•	Tham khảo tài liệu PHP cơ bản, phân tích khả năng triển khai
+•	Tạo repo GitHub, thiết lập môi trường làm việc (VS Code, XAMPP)

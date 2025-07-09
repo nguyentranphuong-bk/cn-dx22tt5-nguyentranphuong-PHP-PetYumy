@@ -1,0 +1,6 @@
+Báo cáo tiến độ tuần 3 (22/06–28/06)
+Nội dung thực hiện: Thiết kế giao diện người dùng (UI), tạo cơ sở dữ liệu MySQL, hoàn thiện thiết kế sơ bộ hệ thống
+•	Thiết kế giao diện trang chủ, đăng nhập, đăng ký bằng HTML/CSS
+•	Phân tích database: các bảng như users, products, orders
+•	Tạo sơ đồ CSDL và file cấu trúc MySQL ban đầu
+•	Tổng hợp các trang giao diện cơ bản trên Figma/HTML demo

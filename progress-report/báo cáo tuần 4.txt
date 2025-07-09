@@ -1,0 +1,6 @@
+Báo cáo tiến độ tuần 4 (29/06–05/07)
+Nội dung thực hiện: Lập trình chức năng người dùng: xem sản phẩm, đăng ký, đăng nhập, thêm vào giỏ hàng, kết nối PHP với CSDL
+•	Viết chức năng hiển thị sản phẩm từ MySQL bằng PHP
+•	Tạo form đăng ký & đăng nhập có kiểm tra thông tin đầu vào
+•	Thiết kế giỏ hàng bằng session và nút "Thêm vào giỏ"
+•	Kết nối CSDL bằng PDO/MySQLi, xử lý các truy vấn backend

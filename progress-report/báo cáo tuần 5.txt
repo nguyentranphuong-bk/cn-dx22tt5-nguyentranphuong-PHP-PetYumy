@@ -1,0 +1,5 @@
+Báo cáo tiến độ tuần 5 (06/07–12/07)
+Nội dung thực hiện: Hoàn thiện chức năng thanh toán đặt hàng, xây dựng trang quản trị, quản lý sản phẩm, đơn hàng, thống kê
+•	Phát triển chức năng thanh toán và lưu đơn hàng vào CSDL
+•	Tạo giao diện quản trị (Admin Panel) với Bootstrap
+•	Code phần quản lý sản phẩm: thêm/sửa/xóa sản phẩm
