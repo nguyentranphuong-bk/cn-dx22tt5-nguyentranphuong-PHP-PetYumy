@@ -19,6 +19,7 @@
   margin: 0 auto; /* Canh giữa theo chiều ngang */
   padding: 30px;
   background-color: #ffffff;
+  font-size: 19px;
 }
 
   </style>

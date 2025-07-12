@@ -89,6 +89,7 @@ heading.addEventListener("click", () => {
   }, 1000);
 });
 
+
 const style = document.createElement("style");
 style.textContent = `
 @keyframes fadeOut {
@@ -96,3 +97,39 @@ style.textContent = `
   100% { opacity: 0; transform: translateY(-20px); }
 }`;
 document.head.appendChild(style);
+
+
+// đoạn lấy tên input header  
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.querySelector('input[type="text"]');
+  if (!input) {
+    console.warn("Không tìm thấy ô input trong DOM");
+    return;
+  }
+
+  input.addEventListener('input', async function () {
+    const keyword = this.value.toLowerCase();
+    let type = '';
+
+    if (keyword.includes('chó') || keyword.includes('cho')) {
+      type = 'dog';
+    } else if (keyword.includes('mèo') || keyword.includes('meo')) {
+      type = 'cat';
+    } else {
+      document.getElementById('dropdown-list').style.display = 'none';
+      return;
+    }
+
+    const response = await fetch(`get_suggestions.php?type=${type}`);
+    const products = await response.json();
+
+    const dropdown = document.getElementById('dropdown-list');
+    dropdown.innerHTML = products.map(p =>
+      `<div style="padding: 8px; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+         <img src="${p.image_url}" alt="${p.name}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+         <span>${p.name}</span>
+       </div>`
+    ).join('');
+    dropdown.style.display = 'block';
+  });
+});

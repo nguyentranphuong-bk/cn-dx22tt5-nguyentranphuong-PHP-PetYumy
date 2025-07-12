@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -26,32 +24,6 @@
 
       <div class="header-menu d-flex align-items-center" style="width: 550px;height: 45px;">
         <div class="menu-left" style="width: 113.2px; height: 45px;">
-          <select id="select1" class="w-100 h-100" style="font-size: 16px;
-    padding-left: 15px;font-weight: bold;border: 1px solid #e2e2e2;
-    border-right: 0px;border-radius: 4px 0 0 4px;">
-            <option selected="">Tất Cả</option>
-            <option value="1">option 01</option>
-            <option value="2">option 02</option>
-            <option value="3">option 03</option>
-            <option value="4">option 04</option>
-            <option value="5">option 05</option>
-          </select>
-        </div>
-
-        <div class="menu-center text-center" style="width: 369.8px; height: 45px;">
-          <input type="text" placeholder="Search" class="w-100 h-100"
-            style="border: 1px solid #e2e2e2;
-                background-color: #fff;
-                color: #000;
-                border-radius: 0;
-                padding-left: 18px;
-                font-size: 15px;">
-        </div>
-
-        <div class="menu-right text-end flex-grow-1" style="height: 45px; ">
-          <button type="button" class="btn btn-primary w-100 h-100 d-flex justify-content-center align-items-center" style="border-radius: 0 4px 4px 0;">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
         </div>
 
       </div>
@@ -72,7 +44,7 @@
         </div>
 
         <div style="flex: 1; background-color: #fff; display: flex; justify-content: space-around; align-items: center; padding: 0px;">
-          
+
           <?php session_start(); ?>
           <div style="display: flex; gap: 20px; align-items: center;">
             <?php if (isset($_SESSION['username'])): ?>
@@ -125,22 +97,22 @@
           </div>
 
 
-            <!-- Popup giỏ hàng -->
-            <div class="cart-popup">
-              <!-- Phần 1: Số lượng sản phẩm -->
-              <div class="cart-count">Bạn đã chọn <span id="cart-count">0</span> sản phẩm</div>
+          <!-- Popup giỏ hàng -->
+          <div class="cart-popup">
+            <!-- Phần 1: Số lượng sản phẩm -->
+            <div class="cart-count">Bạn đã chọn <span id="cart-count">0</span> sản phẩm</div>
 
-              <!-- Phần 2: Thông tin sản phẩm -->
-              <div class="cart-items" id="cart-items">
-                <!-- Sản phẩm sẽ được render ở đây -->
-              </div>
-
-              <!-- Phần 3: Tổng tiền -->
-              <div class="cart-total">Tổng thành tiền: <span id="cart-total">0₫</span></div>
+            <!-- Phần 2: Thông tin sản phẩm -->
+            <div class="cart-items" id="cart-items">
+              <!-- Sản phẩm sẽ được render ở đây -->
             </div>
+
+            <!-- Phần 3: Tổng tiền -->
+            <div class="cart-total">Tổng thành tiền: <span id="cart-total">0₫</span></div>
           </div>
         </div>
       </div>
+    </div>
 
   </header>
   <main>
@@ -173,7 +145,7 @@
 
           </div>
           <div class="item">
-            <a href="" style="text-decoration: none; color:#000">LIÊN HỆ</a>
+            <a href="../lienhe.php" style="text-decoration: none; color:#000">LIÊN HỆ</a>
 
           </div>
         </div>
@@ -232,7 +204,7 @@
           $pageTitle = 'Thức Ăn Cho Chó';
           break;
         case 'phukien.php':
-          $pageTitle = 'Phụ kiện & đồ chơi cho chó'; 
+          $pageTitle = 'Phụ kiện & đồ chơi cho chó';
           // Thêm các trang khác nếu cần
 
       }
@@ -248,8 +220,8 @@
     <div class="filter-bar">
       <div class="left-side">
         <p>Sản phẩm cho Chó</p>
-         <a href="./phukien.php" style="color: red;
-        text-decoration: none; font-size: 20px;" >Phụ kiện & đồ chơi cho chó</a>
+        <a href="./phukien.php" style="color: red;
+        text-decoration: none; font-size: 20px;">Phụ kiện & đồ chơi cho chó</a>
       </div>
 
       <div class="right-side">
@@ -325,6 +297,7 @@
       function applySort(type) {
         window.location.href = `?sort=${type}`;
       }
+
     </script>
   </main>
   <hr style="width: 100%; height: 2px; background-color: #ccc; border: none;">

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -26,27 +24,43 @@
 
       <div class="header-menu d-flex align-items-center" style="width: 550px;height: 45px;">
         <div class="menu-left" style="width: 113.2px; height: 45px;">
-          <select id="select1" class="w-100 h-100" style="font-size: 16px;
+          <select onchange="window.open(this.value, '_blank')" id="select1" class="w-100 h-100" style="font-size: 16px;
     padding-left: 15px;font-weight: bold;border: 1px solid #e2e2e2;
     border-right: 0px;border-radius: 4px 0 0 4px;">
             <option selected="">Tất Cả</option>
-            <option value="1">option 01</option>
-            <option value="2">option 02</option>
-            <option value="3">option 03</option>
-            <option value="4">option 04</option>
-            <option value="5">option 05</option>
+            <option value="./dochocho/thucanchodog.php">Mua đồ cho chó</option>
+            <option value="./dochomeo/thucanchomeo.php">Mua đồ cho mèo</option>
+            <option value="./dochocho/phukien.php">Phụ kiên & đồ chơi cho chó</option>
+            <option value="./dochomeo/phukienmeo.php">Phụ kiên & đồ chơi cho mèo</option>
+            <option value="./gioithieu.php">Giới thiệu</option>
+            <option value="./lienhe.php">Liên hệ</option>
           </select>
         </div>
 
-        <div class="menu-center text-center" style="width: 369.8px; height: 45px;">
-          <input type="text" placeholder="Search" class="w-100 h-100"
+        <div class="menu-center text-center" style="width: 369.8px; height: 45px; position: relative;">
+          <input type="text" placeholder="Search" class="w-100 h-100" id="searchBox"
             style="border: 1px solid #e2e2e2;
-                background-color: #fff;
-                color: #000;
-                border-radius: 0;
-                padding-left: 18px;
-                font-size: 15px;">
+           background-color: #fff;
+           color: #000;
+           border-radius: 0;
+           padding-left: 18px;
+           font-size: 15px;">
+
+          <div id="dropdown-list"
+            style="display: none; 
+              position: absolute; 
+              top: 100%; 
+              left: 0; 
+              width: 100%; 
+              background: #fff; 
+              border: 1px solid #ccc; 
+              border-radius: 4px; 
+              max-height: 300px; 
+              overflow-y: auto; 
+              z-index: 99;">
+          </div>
         </div>
+
 
         <div class="menu-right text-end flex-grow-1" style="height: 45px; ">
           <button type="button" class="btn btn-primary w-100 h-100 d-flex justify-content-center align-items-center" style="border-radius: 0 4px 4px 0;">
@@ -81,7 +95,15 @@
                 <i class="fa fa-user" style="font-size: 20px;"></i>
                 <span><?php echo htmlspecialchars($_SESSION['username']); ?></span>
               </a>
-
+              <?php
+              // ✅ Thêm nút quản trị nếu là admin
+              if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+                echo '<a href="Quantridoanhthu/admin_dashboard.php" style="text-decoration: none; color: #28a745; display: flex; flex-direction: column; align-items: center; margin: 0 3px;">';
+                echo '<i class="fa fa-cogs" style="font-size: 20px;"></i>';
+                echo '<span>Quản trị</span>';
+                echo '</a>';
+              }
+              ?>
               <!-- Nút đăng xuất -->
               <a href="./Database/dangxuat.php" style="text-decoration: none; color: #c00; display: flex; flex-direction: column; align-items: center;margin: 0 3px;">
                 <i class="fa fa-sign-out" style="font-size: 20px;"></i>
@@ -162,8 +184,8 @@
               <a href="./Dochomeo/phukienmeo.php" class="sub-item" style="text-decoration: none;">Phụ kiện & đồ chơi cho Mèo</a>
             </div>
           </div>
-          <div class="item"> 
-            MUA ĐÒ CHO CHÓ 
+          <div class="item">
+            MUA ĐÒ CHO CHÓ
             <div class="sub-list">
               <a href="./Dochocho/thucanchodog.php" class="sub-item" style="text-decoration: none;">Thức ăn & dinh dưỡng cho Chó</a>
               <a href="./Dochocho/phukien.php" class="sub-item" style="text-decoration: none;">Phụ kiện & đồ chơi cho Chó</a>
@@ -171,12 +193,12 @@
           </div>
 
           <div class="item">
-            <a href="" style="text-decoration: none;color:#000" >GIỚI THIỆU</a>
-            
+            <a href="./gioithieu.php" style="text-decoration: none;color:#000">GIỚI THIỆU</a>
+
           </div>
           <div class="item">
-             <a href="" style="text-decoration: none; color:#000" >LIÊN HỆ</a>
-           
+            <a href="./lienhe.php" style="text-decoration: none; color:#000">LIÊN HỆ</a>
+
           </div>
         </div>
 
@@ -322,6 +344,69 @@
         direction *= -1;
       }, 200); // mỗi 200ms đổi hướng
     };
+    // xổ sản phẩm 
+    document.addEventListener("DOMContentLoaded", function() {
+      const input = document.querySelector('input[type="text"]');
+      if (!input) return;
+
+      input.addEventListener('input', async function() {
+        const keyword = this.value.toLowerCase();
+        let type = '';
+
+        if (keyword.includes('chó') || keyword.includes('cho')) {
+          type = 'dog';
+        } else if (keyword.includes('mèo') || keyword.includes('meo')) {
+          type = 'cat';
+        } else {
+          const dropdown = document.getElementById('dropdown-list');
+          if (dropdown) dropdown.style.display = 'none';
+          return;
+        }
+
+        const response = await fetch(`get_suggestions.php?type=${type}`);
+        const products = await response.json();
+
+        const dropdown = document.getElementById('dropdown-list');
+        dropdown.innerHTML = products.map(p =>
+          `<div onclick="window.location.href='thongtinchitietsp.php?id=${p.id}'"
+           style="cursor: pointer; padding: 8px; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+         <img src="img/${p.image}" alt="${p.name}" style="width: 50px; height: 50px; margin-right: 10px;">
+         <span>${p.name}</span>
+       </div>`
+        ).join('');
+        dropdown.style.display = 'block';
+      });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const searchInput = document.getElementById("searchBox");
+      const searchBtn = document.querySelector(".menu-right button");
+
+      function handleSearch() {
+        const keyword = searchInput.value.toLowerCase();
+
+        if (keyword.includes("mèo") || keyword.includes("meo")) {
+          window.location.href = "../dochomeo/thucanchomeo.php";
+        } else if (keyword.includes("chó") || keyword.includes("cho")) {
+          window.location.href = "../dochocho/thucanchodog.php";
+        } else {
+          alert("Không tìm thấy trang phù hợp với từ khoá!");
+        }
+
+      }
+
+      // Khi nhấn nút kính lúp
+      searchBtn.addEventListener("click", handleSearch);
+
+      // Khi nhấn Enter trong ô input
+      searchInput.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault(); // Ngăn trình duyệt gửi form (nếu có)
+          handleSearch();
+        }
+      });
+    });
   </script>
 
 

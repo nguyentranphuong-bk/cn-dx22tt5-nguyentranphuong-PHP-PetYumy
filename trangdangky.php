@@ -24,33 +24,7 @@
 
             <div class="header-menu d-flex align-items-center" style="width: 550px;height: 45px;">
                 <div class="menu-left" style="width: 113.2px; height: 45px;">
-                    <select id="select1" class="w-100 h-100" style="font-size: 16px;
-    padding-left: 15px;font-weight: bold;border: 1px solid #e2e2e2;
-    border-right: 0px;border-radius: 4px 0 0 4px;">
-                        <option selected="">Tất Cả</option>
-                        <option value="1">option 01</option>
-                        <option value="2">option 02</option>
-                        <option value="3">option 03</option>
-                        <option value="4">option 04</option>
-                        <option value="5">option 05</option>
-                    </select>
-                </div>
-
-                <div class="menu-center text-center" style="width: 369.8px; height: 45px;">
-                    <input type="text" placeholder="Search" class="w-100 h-100"
-                        style="border: 1px solid #e2e2e2;
-                background-color: #fff;
-                color: #000;
-                border-radius: 0;
-                padding-left: 18px;
-                font-size: 15px;">
-                </div>
-
-                <div class="menu-right text-end flex-grow-1" style="height: 45px; ">
-                    <button type="button" class="btn btn-primary w-100 h-100 d-flex justify-content-center align-items-center" style="border-radius: 0 4px 4px 0;">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
+</div>
 
             </div>
             <div class="header-cart" style="width: 476px; height: 45px; display: flex;">
@@ -180,30 +154,39 @@
 
 
         <div class="register-card">
-  <h3 class="mb-4 text-center">Đăng ký người dùng</h3>
-  <form id="registerForm" method="POST" action="./Database/ketnoidangki.php">
-    <div class="mb-3">
-      <label for="username" class="form-label">Tên đăng nhập</label>
-      <input type="text" class="form-control" id="username" name="username" required>
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <div class="mb-3">
-      <label for="password" class="form-label">Mật khẩu</label>
-      <input type="password" class="form-control" id="password" name="password" required>
-    </div>
-    <div class="mb-3">
-      <label for="address" class="form-label">Địa chỉ</label>
-      <input type="text" class="form-control" id="address" name="address" required>
-    </div>
-    <div class="mb-3">
-      <label for="phone" class="form-label">Số điện thoại</label>
-      <input type="text" class="form-control" id="phone" name="phone" required>
-    </div>
-    <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
-  </form>
+  <h3 class="mb-4 text-center">Đăng ký</h3>
+  <form id="registerForm" method="POST" action="./Database/ketnoidangki.php" onsubmit="return validateForm()">
+  <div class="mb-3">
+    <label for="fullname" class="form-label" >Họ và tên</label>
+    <input type="text" class="form-control" id="ho_va_ten" name="ho_va_ten" required>
+  </div>
+  <div class="mb-3">
+    <label for="username" class="form-label">Tên đăng nhập</label>
+    <input type="text" class="form-control" id="username" name="username" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Mật khẩu</label>
+    <input type="password" class="form-control" id="password" name="password" required>
+  </div>
+  <div class="mb-3">
+    <label for="confirmPassword" class="form-label">Nhập lại mật khẩu</label>
+    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+  </div>
+  <div class="mb-3">
+    <label for="address" class="form-label">Địa chỉ</label>
+    <input type="text" class="form-control" id="address" name="address" required>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Số điện thoại</label>
+    <input type="text" class="form-control" id="phone" name="phone" required>
+  </div>
+  <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
+</form>
+
   <div class="feather-effect" id="featherContainer"></div>
 </div>
 

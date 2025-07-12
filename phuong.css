@@ -8,7 +8,8 @@
 }
 
 .row-container {
-  margin: 12px 109px;
+  padding: 8px 0px;
+  margin: 10px 42px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -320,7 +321,7 @@ body {
   opacity: 1;
 }
 .register-card {
-      background: white;
+      background: antiquewhite;
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.2);
@@ -833,4 +834,33 @@ button:hover {
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+.footer-bar {
+  width: 100%;
+  height: 49px;
+  background: linear-gradient(to right, #ffe4b2, #ffd1a6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+  animation: fadeIn 1s ease-in;
+}
+
+.footer-bar span {
+  display: inline-block;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-bar span:hover {
+  transform: scale(1.05);
+  color: #ff7f50;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

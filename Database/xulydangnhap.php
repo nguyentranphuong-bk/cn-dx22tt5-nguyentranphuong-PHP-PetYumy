@@ -24,7 +24,7 @@ if ($result->num_rows == 1) {
         // Lưu thông tin đăng nhập vào session
         $_SESSION['username'] = $row['username'];
         $_SESSION['user_id'] = $row['id'];
-
+        $_SESSION['role'] = $row['role']; // 🆕 Lưu quyền admin/user
         // Chuyển về trang chủ
         header("Location: ../trangchu.php");
         exit();

@@ -24,34 +24,7 @@
 
       <div class="header-menu d-flex align-items-center" style="width: 550px;height: 45px;">
         <div class="menu-left" style="width: 113.2px; height: 45px;">
-          <select id="select1" class="w-100 h-100" style="font-size: 16px;
-    padding-left: 15px;font-weight: bold;border: 1px solid #e2e2e2;
-    border-right: 0px;border-radius: 4px 0 0 4px;">
-            <option selected="">Tất Cả</option>
-            <option value="1">option 01</option>
-            <option value="2">option 02</option>
-            <option value="3">option 03</option>
-            <option value="4">option 04</option>
-            <option value="5">option 05</option>
-          </select>
         </div>
-
-        <div class="menu-center text-center" style="width: 369.8px; height: 45px;">
-          <input type="text" placeholder="Search" class="w-100 h-100"
-            style="border: 1px solid #e2e2e2;
-                background-color: #fff;
-                color: #000;
-                border-radius: 0;
-                padding-left: 18px;
-                font-size: 15px;">
-        </div>
-
-        <div class="menu-right text-end flex-grow-1" style="height: 45px; ">
-          <button type="button" class="btn btn-primary w-100 h-100 d-flex justify-content-center align-items-center" style="border-radius: 0 4px 4px 0;">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-
       </div>
       <div class="header-cart" style="width: 476px; height: 45px; display: flex;">
         <div style="width: 181px; background-color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 8px;">
@@ -153,8 +126,8 @@
           <div class="item">
             MUA ĐỒ CHO MÈO
             <div class="sub-list">
-              <a href="./thucanchomeo.php" class="sub-item" style="text-decoration: none;">Thức ăn & dinh dưỡng cho Mèo</a>
-              <a href="./phukienmeo.php" class="sub-item" style="text-decoration: none;">Phụ kiện & đồ chơi cho Mèo</a>
+              <a href="./Dochomeo/thucanchomeo.php" class="sub-item" style="text-decoration: none;">Thức ăn & dinh dưỡng cho Mèo</a>
+              <a href="./Dochomeo/phukienmeo.php" class="sub-item" style="text-decoration: none;">Phụ kiện & đồ chơi cho Mèo</a>
             </div>
           </div>
           <div class="item">
@@ -180,7 +153,7 @@
         <div class="custom-button-group">
           <a href="../trangchu.php" class="custom-button">TRANG CHỦ</a>
           <a href="../Dochocho/thucanchodog.php" class="custom-button">MUA ĐỒ CHO CHÓ</a>
-          <a href="../PetYumy/Dochomeo/thucanchomeo.php" class="custom-button">MUA ĐỒ CHO MÈO</a>
+          <a href="./Dochomeo/thucanchomeo.php" class="custom-button">MUA ĐỒ CHO MÈO</a>
           <a href="./gioithieu.php" class="custom-button">GIỚI THIỆU</a>
           <a href="./lienhe.php" class="custom-button" style="color: aliceblue;
                     background: blue;">LIÊN HỆ</a>
@@ -286,26 +259,26 @@
   <div class="footer-column">
     <h1>Thông tin liên hệ</h1>
     <p>Trang mua sắm trực tuyến các sản phẩm bán lẻ dành cho thú cưng của Mozzi Pet Shop.<br>
-    Công ty TNHH MOZZI.</p>
+    Cửa hàng PETYUMY.</p>
   </div>
 
   <div class="footer-column">
     <h1>Thông tin cửa hàng</h1>
-    <p>Địa chỉ: 12A Phạm Văn Cội, Củ Chi, TP.HCM</p>
-    <p>Số điện thoại: 0938 123 456</p>
+    <p>Địa chỉ: Thành Phố Hồ Chí Minh</p>
+    <p>Số điện thoại: 036 254 0033</p>
   </div>
 
   <div class="footer-column">
     <h1>Danh mục</h1>
     <ul>
-      <li><a href="#">Liên hệ</a></li>
-      <li><a href="#">Giới thiệu</a></li>
+      <li><a href="./lienhe.php">Liên hệ</a></li>
+      <li><a href="./gioithieu.php">Giới thiệu</a></li>
     </ul>
   </div>
 
   <div class="footer-column">
     <h1>Chăm sóc khách hàng</h1>
-    <p>📞 0938 456 789 - <a href="mailto:info@yume@.vn">info@yume@.vn</a></p>
+    <p>📞 0362540033 - <a href="mailto:info@yume@.vn">info@yume@.vn</a></p>
     <p>Follow Us:</p>
     <div class="social-icons">
       <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
@@ -316,6 +289,11 @@
     </div>
   </div>
 </footer>
+ 
+ <div class="footer-bar">
+  <span>Copyright © PetYUMY Shop.</span>
+  <span>Powered by NGUYEN TRAN PHUONG.</span>
+</div>
 
 </body>
 
