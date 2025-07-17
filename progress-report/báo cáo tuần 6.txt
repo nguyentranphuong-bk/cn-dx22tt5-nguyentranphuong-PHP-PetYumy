@@ -1,0 +1,6 @@
+Báo cáo tiến độ tuần 6 (13/07–19/07)
+Nội dung thực hiện: Kiểm thử chức năng toàn hệ thống, tối ưu giao diện và sửa lỗi phát sinh
+•	Kiểm thử các chức năng: đăng ký, đăng nhập, mua hàng, admin
+•	Sửa lỗi layout, responsive trên thiết bị di động
+•	Kiểm tra logic xử lý đơn hàng, tính tổng tiền, giỏ hàng
+•	Tối ưu code HTML/PHP, cải thiện tốc độ tải trang

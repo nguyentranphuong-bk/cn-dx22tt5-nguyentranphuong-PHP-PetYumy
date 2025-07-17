@@ -75,9 +75,40 @@
 
   </div>
 
-  <footer>
-    <p>&copy; 2025 PetYummy Vietnam. Yêu thú cưng là yêu cuộc sống.</p>
-  </footer>
+  < <footer class="footer">
+  <div class="footer-column">
+    <h1>Thông tin liên hệ</h1>
+    <p>Trang mua sắm trực tuyến các sản phẩm bán lẻ dành cho thú cưng của Mozzi Pet Shop.<br>
+    Cửa hàng PETYUMY.</p>
+  </div>
+
+  <div class="footer-column">
+    <h1>Thông tin cửa hàng</h1>
+    <p>Địa chỉ: Thành Phố Hồ Chí Minh</p>
+    <p>Số điện thoại: 036 254 0033</p>
+  </div>
+
+  <div class="footer-column">
+    <h1>Danh mục</h1>
+    <ul>
+      <li><a href="./lienhe.php">Liên hệ</a></li>
+      <li><a href="./gioithieu.php">Giới thiệu</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h1>Chăm sóc khách hàng</h1>
+    <p>📞 0362540033 - <a href="mailto:info@yume@.vn">info@yume@.vn</a></p>
+    <p>Follow Us:</p>
+    <div class="social-icons">
+      <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+  <a href="#" class="icon"><i class="fas fa-store"></i></a> <!-- Lazada dùng icon store -->
+  <a href="#" class="icon"><i class="fab fa-tiktok"></i></a>
+  <a href="#" class="icon"><i class="fas fa-shopping-bag"></i></a> <!-- Shopee dùng shopping bag -->
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,6 @@
+Báo cáo tiến độ tuần 7 (20/07–27/07)
+Nội dung thực hiện: Viết và hoàn thiện báo cáo đồ án
+•	Tổng hợp các nội dung đã thực hiện
+•	Viết báo cáo gồm: mở đầu, phân tích bài toán, thiết kế, triển khai
+•	Chụp ảnh màn hình giao diện, trích đoạn code minh họa
+•	Rà soát lại toàn bộ tài liệu trước khi nộp
